@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/divider"
+    android:orientation="vertical">
+
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        android:id="@+id/qmui_popup"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_15"
+        android:layout_toLeftOf="@+id/delete"
+        android:paddingBottom="@dimen/padding_5"
+        android:paddingLeft="@dimen/padding_15"
+        android:paddingRight="@dimen/padding_15"
+        android:paddingTop="@dimen/padding_5"
+        android:text="QMUIPopup"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/text_size20"
+        app:qmui_borderColor="@color/orange"
+        app:qmui_isRadiusAdjustBounds="true" />
+</LinearLayout>

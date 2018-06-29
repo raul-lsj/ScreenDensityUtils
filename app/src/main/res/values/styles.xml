@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+
+        <item name="android:windowBackground">@color/white</item>
+
+        <!-- 配置qmui提供的theme -->
+        <!-- 状态栏颜色 -->
+        <item name="qmui_config_color_blue">@color/style</item>
+
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <!--**********************************************
+        *                  qmui topbar                   *
+        ***********************************************-->
+        <item name="QMUITopBarStyle">@style/QDTopBar</item>
+    </style>
+
+    <style name="QDTopBar" parent="QMUI.TopBar">
+        <item name="qmui_topbar_title_color">@color/white</item>
+        <item name="qmui_topbar_bg_color">@color/style</item>
+        <item name="qmui_topbar_height">@dimen/padding_45</item>
+        <item name="qmui_topbar_text_btn_color_state_list">@color/white</item>
+        <!--<item name="qmui_topbar_left_back_drawable_id">@drawable/back_icon_24dp</item>-->
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+</resources>
