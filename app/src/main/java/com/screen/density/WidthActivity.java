@@ -1,6 +1,6 @@
 package com.screen.density;
 
-public class TextViewActivity extends BaseActivity {
+public class WidthActivity extends BaseActivity {
 
     @Override
     protected int getLayout() {

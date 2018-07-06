@@ -17,8 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TextViewActivity" />
-        <activity android:name=".DialogActivity"></activity>
+        <activity android:name=".DialogActivity"/>
+        <activity android:name=".WidthActivity" />
+        <activity android:name=".HeightActivity"/>
     </application>
 
 </manifest>

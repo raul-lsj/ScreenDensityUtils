@@ -8,8 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 
-import java.text.DecimalFormat;
-
 /**
  * 通过修改系统参数来适配android设备
  * https://www.jianshu.com/p/4254ea9d1b27
@@ -69,21 +67,14 @@ public class Density {
      */
     private static void setAppOrientation(@Nullable Activity activity, String orientation) {
 
-        float targetDensity = 0;
-        try {
-            Double division;
-            //根据带入参数选择不同的适配方向
-            if (orientation.equals("height")) {
-                division = Operation.division(appDisplayMetrics.heightPixels, 667);
-            } else {
-                division = Operation.division(appDisplayMetrics.widthPixels, 360);
-            }
-            //由于手机的长宽不尽相同,肯定会有除不尽的情况,有失精度,所以在这里把所得结果做了一个保留两位小数的操作
-            DecimalFormat df = new DecimalFormat("0.00");
-            String s = df.format(division);
-            targetDensity = Float.parseFloat(s);
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
+        float targetDensity;
+
+        //获取状态栏高度
+        int barHeight = AppUtils.getStatusBarHeight(activity);
+        if (orientation.equals("height")) {
+            targetDensity = (appDisplayMetrics.heightPixels - barHeight) / 667f;
+        } else {
+            targetDensity = appDisplayMetrics.widthPixels / 360f;
         }
 
         float targetScaledDensity = targetDensity * (appScaledDensity / appDensity);
@@ -95,7 +86,6 @@ public class Density {
          *
          * 只修改Activity的density值
          */
-
         DisplayMetrics activityDisplayMetrics = activity.getResources().getDisplayMetrics();
         activityDisplayMetrics.density = targetDensity;
         activityDisplayMetrics.scaledDensity = targetScaledDensity;

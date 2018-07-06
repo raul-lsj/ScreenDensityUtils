@@ -39,7 +39,8 @@ public class MainFragment extends BaseFragment {
     private void initdata() {
         list = new ArrayList<>();
         list.add("dialog");
-        list.add("TextView");
+        list.add("width");
+        list.add("height");
         list.add("h-45dp-------" + 1);
         list.add("h-45dp-------" + 2);
         list.add("h-45dp-------" + 3);
@@ -90,7 +91,10 @@ public class MainFragment extends BaseFragment {
                         startActivity(new Intent(mContext, DialogActivity.class));
                         break;
                     case 1:
-                        startActivity(new Intent(mContext, TextViewActivity.class));
+                        startActivity(new Intent(mContext, WidthActivity.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(mContext, HeightActivity.class));
                         break;
                 }
             }
