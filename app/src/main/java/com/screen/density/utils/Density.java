@@ -20,10 +20,13 @@ public class Density {
     private static float appDensity;
     private static float appScaledDensity;
     private static DisplayMetrics appDisplayMetrics;
+    private static int barHeight;
 
     public static void setDensity(@NonNull Application application) {
         //获取application的DisplayMetrics
         appDisplayMetrics = application.getResources().getDisplayMetrics();
+        //获取状态栏高度
+        barHeight = AppUtils.getStatusBarHeight(application);
 
         if (appDensity == 0) {
             //初始化的时候赋值
@@ -68,9 +71,7 @@ public class Density {
     private static void setAppOrientation(@Nullable Activity activity, String orientation) {
 
         float targetDensity;
-
-        //获取状态栏高度
-        int barHeight = AppUtils.getStatusBarHeight(activity);
+        
         if (orientation.equals("height")) {
             targetDensity = (appDisplayMetrics.heightPixels - barHeight) / 667f;
         } else {
