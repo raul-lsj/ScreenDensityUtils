@@ -12,8 +12,8 @@
         android:theme="@style/AppTheme">
 
         <meta-data
-        android:name="android.max_aspect"
-        android:value="2.2" />
+            android:name="android.max_aspect"
+            android:value="2.2" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
